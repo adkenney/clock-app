@@ -1,0 +1,18 @@
+#quote-container {
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+.quote {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.refresh-btn {
+  background-color: transparent;
+  border: none;
+  width: 1rem;
+  height: 1rem;
+}
