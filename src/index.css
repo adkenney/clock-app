@@ -5,6 +5,8 @@
   --clr-secondary-100: #979797;
 
   --ff-primary: 'Inter', sans-serif;
+  --fs-md: 1.125rem;
+  --fs-lg: 10.9375rem;
   --fw-regular: 400;
   --fw-bold: 700;
   --fw-light: 300;
@@ -155,6 +157,7 @@ button {
 
 .flex {
   display: flex;
+  min-width: 0;
 }
 
 .container {
@@ -162,7 +165,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
+  min-height: 100vh;
   padding: 2.5em 1.75em 3em 1.75em;
   background-color: rgba(0, 0, 0, 0.4);
 }
@@ -173,4 +176,40 @@ button {
 
 .hide {
   display: none;
+}
+
+.lg-view {
+  display: none;
+}
+
+@media only screen and (min-width: 48em) {
+  .container {
+    align-items: start;
+    padding: 6em 3em 3em 3em;
+  }
+
+  .lg-view {
+    display: inline-block;
+  }
+  .quote-txt,
+  .author-txt {
+    font-size: var(--fs-md);
+  }
+
+  .greeting-txt {
+    font-size: var(--fs-md);
+  }
+
+  .time-txt {
+    font-size: var(--fs-lg);
+    line-height: 1em;
+  }
+
+  .location-txt {
+    font-size: var(--fs-md);
+  }
+
+  .detail-txt {
+    font-size: 1rem;
+  }
 }

@@ -19,7 +19,8 @@
 
 .details {
   flex-direction: column;
-  padding: 2em 1.5em;
+  padding: 3em 1.5em;
+  gap: 1em;
 }
 
 ul.details li {
@@ -40,4 +41,50 @@ ul.details li {
 .details p {
   font-size: 1.25rem;
   font-weight: var(--fw-bold);
+}
+
+@media only screen and (min-width: 48em) {
+  .details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'timezone week'
+      'dayOfYear weekNum';
+    gap: 4em;
+    padding: 5em 3em;
+  }
+  .details-timezone,
+  .details-year,
+  .details-weekday,
+  .details-week {
+    flex-direction: column;
+  }
+
+  ul.details li {
+    align-items: start;
+  }
+
+  .details h2 {
+    font-size: 0.8175rem;
+  }
+
+  .details p {
+    font-size: 2.5rem;
+  }
+
+  .details-timezone {
+    grid-area: timezone;
+  }
+
+  .details-weekday {
+    grid-area: weekNum;
+  }
+
+  .details-year {
+    grid-area: dayOfYear;
+  }
+
+  .details-weekday {
+    grid-area: week;
+  }
 }

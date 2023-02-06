@@ -11,8 +11,8 @@ function App() {
   const [timeDay, setTimeDay] = useState(true);
 
   const checkTimeOfDay = time => {
-    const currHours = new Date(time).getHours();
-    if (currHours >= 6 && currHours < 18) {
+    let currHours = new Date(time).getHours();
+    if (currHours >= 5 && currHours < 18) {
       setTimeDay(true);
     } else {
       setTimeDay(false);

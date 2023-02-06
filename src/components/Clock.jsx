@@ -13,8 +13,21 @@ const Clock = ({ time, location, toggleDetails, toggleButtonTxt }) => {
 
   let formattedTime = currTime.slice(0, -2);
   let timeOfDay = currTime.slice(-2);
-  let timeOfDayTxt = timeOfDay === 'AM' ? 'Good Morning' : 'Good Evening';
-  let timeOfDayIcon = timeOfDay === 'AM' ? SunIcon : MoonIcon;
+  let hours = new Date(time.datetime).getHours();
+
+  let timeOfDayTxt = '';
+  if (hours >= 5 && hours < 12) {
+    timeOfDayTxt = 'Good Morning';
+  } else if (hours >= 12 && hours < 18) {
+    timeOfDayTxt = 'Good Afternoon';
+  } else {
+    timeOfDayTxt = 'Good Evening';
+  }
+
+  let timeOfDayIcon =
+    timeOfDayTxt === 'Good Morning' || timeOfDayTxt === 'Good Afternoon'
+      ? SunIcon
+      : MoonIcon;
 
   return (
     <section className={styles['clock-container']}>
@@ -23,7 +36,10 @@ const Clock = ({ time, location, toggleDetails, toggleButtonTxt }) => {
           <div>
             <img src={timeOfDayIcon} alt="sunny"></img>
           </div>
-          <h2 className="greeting-txt">{timeOfDayTxt}</h2>
+          <h2 className="greeting-txt">
+            {timeOfDayTxt}
+            <span className="lg-view">, it's Currently</span>
+          </h2>
         </div>
         <div className={`flex ${styles['time']}`}>
           <p className="time-txt">{formattedTime}</p>

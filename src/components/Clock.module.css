@@ -1,5 +1,5 @@
 .clock-container {
-  /* margin-top: 23em; */
+  margin-top: 7em;
   text-transform: uppercase;
 }
 
@@ -31,4 +31,7 @@
 .arrow {
   width: 2rem;
   height: 2rem;
+}
+
+@media only screen and (min-width: 48em) {
 }
