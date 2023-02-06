@@ -1,0 +1,43 @@
+.details,
+.details-timezone,
+.details-year,
+.details-weekday,
+.details-week {
+  display: flex;
+}
+
+.details-container {
+  display: none;
+  position: absolute;
+  background-color: var(--clr-secondary-100);
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.details {
+  flex-direction: column;
+  padding: 2em 1.5em;
+}
+
+ul.details li {
+  justify-content: space-between;
+  align-items: center;
+}
+.details h2,
+.details p {
+  color: var(--clr-primary-400);
+}
+.details h2 {
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  line-height: 1.75rem;
+  letter-spacing: 0.125rem;
+}
+
+.details p {
+  font-size: 1.25rem;
+  font-weight: var(--fw-bold);
+}

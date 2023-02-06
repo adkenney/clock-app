@@ -2,6 +2,7 @@
   --clr-primary-100: #ffffff;
   --clr-primary-400: #303030;
   --clr-primary-700: #000000;
+  --clr-secondary-100: #979797;
 
   --ff-primary: 'Inter', sans-serif;
   --fw-regular: 400;
@@ -138,21 +139,38 @@ button {
   opacity: 0.5;
 }
 
-main {
+.day {
   background: url(assets/mobile/bg-image-daytime.jpg) no-repeat center center
     fixed;
   background-size: cover;
   min-height: 100vh;
 }
+
+.night {
+  background: url(assets/mobile/bg-image-nighttime.jpg) no-repeat center center
+    fixed;
+  background-size: cover;
+  min-height: 100vh;
+}
+
 .flex {
   display: flex;
 }
 
 .container {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
   padding: 2.5em 1.75em 3em 1.75em;
   background-color: rgba(0, 0, 0, 0.4);
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
 }
