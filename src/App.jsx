@@ -63,7 +63,7 @@ function App() {
 
   return (
     <main className={timeDay ? 'day' : 'night'}>
-      <div className="container">
+      <div className={'container'}>
         <Quote quote={quote} getQuoteHandler={getQuote} toggleHide={show} />
         <Clock
           time={time}

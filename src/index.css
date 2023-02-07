@@ -39,6 +39,7 @@ html:focus-within {
 }
 
 /* Set core body defaults */
+html,
 body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
@@ -147,16 +148,17 @@ button {
 }
 
 .day {
-  background: url(assets/mobile/bg-image-daytime.jpg) no-repeat center center
-    fixed;
+  background-image: url(assets/mobile/bg-image-daytime.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
   min-height: 100vh;
 }
 
 .night {
-  background: url(assets/mobile/bg-image-nighttime.jpg) no-repeat center center
-    fixed;
+  background-image: url(assets/mobile/bg-image-nighttime.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   min-height: 100vh;
 }
 
@@ -194,13 +196,11 @@ button {
   }
 
   .day {
-    background: url(assets/desktop/bg-image-daytime.jpg) no-repeat center center
-      fixed;
+    background-image: url(assets/desktop/bg-image-daytime.jpg);
   }
 
   .night {
-    background: url(assets/desktop/bg-image-nighttime.jpg) no-repeat center
-      center fixed;
+    background-image: url(assets/desktop/bg-image-nighttime.jpg);
   }
 
   .lg-view {
