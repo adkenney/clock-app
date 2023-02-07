@@ -22,7 +22,7 @@ function App() {
 
   const getTimeAndLocationData = useCallback(async () => {
     const timeUrl = 'https://worldtimeapi.org/api/ip';
-    const locationUrl = `http://ip-api.com/json/`;
+    const locationUrl = `https://ipapi.co/json`;
     try {
       const responses = await Promise.all([fetch(timeUrl), fetch(locationUrl)]);
 

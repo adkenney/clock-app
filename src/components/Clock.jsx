@@ -53,7 +53,7 @@ const Clock = ({
           <p className="timezone-txt">{time.abbreviation}</p>
         </div>
         <div className={styles['location']}>
-          <p className="location-txt">{`in ${location.city}, ${location.region}`}</p>
+          <p className="location-txt">{`in ${location.city}, ${location.region_code}`}</p>
         </div>
       </div>
       <button className={styles['details-btn']} onClick={toggleDetails}>
