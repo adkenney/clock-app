@@ -14,6 +14,10 @@
   gap: 0.5em;
 }
 
+.greeting {
+  align-items: center;
+}
+
 .time {
   align-items: flex-end;
 }
@@ -27,11 +31,25 @@
   padding: 0.1em 0.25em 0 1.5em;
   border: none;
   border-radius: 1.75em;
+  cursor: pointer;
 }
+
 .arrow {
   width: 2rem;
   height: 2rem;
+  transform: rotate(0deg);
 }
 
-@media only screen and (min-width: 48em) {
+@media only screen and (min-width: 64em) {
+  .clock-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 4em;
+  }
+
+  .clock-wrapper {
+    margin: 0;
+    gap: 0;
+  }
 }

@@ -4,7 +4,13 @@ import MoonIcon from '../assets/desktop/icon-moon.svg';
 import UpArrow from '../assets/desktop/icon-arrow-up.svg';
 import styles from '../components/Clock.module.css';
 
-const Clock = ({ time, location, toggleDetails, toggleButtonTxt }) => {
+const Clock = ({
+  time,
+  location,
+  toggleDetails,
+  toggleButtonTxt,
+  isActive,
+}) => {
   let currTime = new Date(time.datetime).toLocaleString('en-us', {
     hour: 'numeric',
     minute: 'numeric',
@@ -12,7 +18,6 @@ const Clock = ({ time, location, toggleDetails, toggleButtonTxt }) => {
   });
 
   let formattedTime = currTime.slice(0, -2);
-  let timeOfDay = currTime.slice(-2);
   let hours = new Date(time.datetime).getHours();
 
   let timeOfDayTxt = '';
@@ -28,6 +33,8 @@ const Clock = ({ time, location, toggleDetails, toggleButtonTxt }) => {
     timeOfDayTxt === 'Good Morning' || timeOfDayTxt === 'Good Afternoon'
       ? SunIcon
       : MoonIcon;
+
+  let btnActive = isActive ? 'active' : '';
 
   return (
     <section className={styles['clock-container']}>
@@ -51,7 +58,11 @@ const Clock = ({ time, location, toggleDetails, toggleButtonTxt }) => {
       </div>
       <button className={styles['details-btn']} onClick={toggleDetails}>
         <span className="detail-txt">{toggleButtonTxt ? 'less' : 'more'}</span>
-        <img className={styles['arrow']} src={UpArrow} alt="show details"></img>
+        <img
+          className={`${btnActive} ${styles['arrow']}`}
+          src={UpArrow}
+          alt="show details"
+        ></img>
       </button>
       {/* Use state to keep track of button press 
       pass state down to details component to decide whether to display or not */}

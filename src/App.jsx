@@ -9,6 +9,7 @@ function App() {
   const [location, setLocation] = useState([]);
   const [show, setShow] = useState(false);
   const [timeDay, setTimeDay] = useState(true);
+  const [isActive, setIsActive] = useState(false);
 
   const checkTimeOfDay = time => {
     let currHours = new Date(time).getHours();
@@ -29,8 +30,8 @@ function App() {
       const locationResponse = await responses[1].json();
 
       setTime(timeData);
+      checkTimeOfDay(timeData.datetime);
       setLocation(locationResponse);
-      checkTimeOfDay(time.datetime);
     } catch (err) {
       alert(err);
     }
@@ -57,6 +58,7 @@ function App() {
 
   const toggleDetails = () => {
     setShow(!show);
+    setIsActive(!isActive);
   };
 
   return (
@@ -68,8 +70,9 @@ function App() {
           location={location}
           toggleDetails={toggleDetails}
           toggleButtonTxt={show}
+          isActive={isActive}
         />
-        <DetailView details={time} showDetails={show} />
+        <DetailView details={time} showDetails={show} timeOfDay={timeDay} />
       </div>
     </main>
   );

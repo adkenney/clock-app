@@ -1,10 +1,12 @@
 import React from 'react';
 import styles from '../components/DetailView.module.css';
-const DetailView = ({ details, showDetails }) => {
+const DetailView = ({ details, showDetails, timeOfDay }) => {
   let toggleDetails = showDetails ? 'show' : '';
-
+  let bgDark = timeOfDay ? '' : 'dark';
   return (
-    <section className={`${styles['details-container']} ${toggleDetails}`}>
+    <section
+      className={`${bgDark} ${styles['details-container']} ${toggleDetails}`}
+    >
       <ul className={styles['details']}>
         <li className={styles['details-timezone']}>
           <h2>current timezone</h2>

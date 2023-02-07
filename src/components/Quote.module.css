@@ -1,6 +1,8 @@
 .quote-container {
   display: flex;
   justify-content: center;
+  align-self: flex-start;
+  max-width: 35em;
   gap: 0.5em;
 }
 
@@ -15,7 +17,4 @@
   border: none;
   width: 1rem;
   height: 1rem;
-}
-
-@media screen and (min-width: 48em) {
 }

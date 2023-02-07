@@ -7,6 +7,7 @@
   --ff-primary: 'Inter', sans-serif;
   --fs-md: 1.125rem;
   --fs-lg: 10.9375rem;
+  --fs-xl: 12.5rem;
   --fw-regular: 400;
   --fw-bold: 700;
   --fw-light: 300;
@@ -92,6 +93,10 @@ button {
   letter-spacing: 0.234rem;
   font-weight: var(--fw-bold);
   text-transform: uppercase;
+}
+
+.active {
+  transform: rotate(180deg);
 }
 
 .quote-txt,
@@ -185,7 +190,17 @@ button {
 @media only screen and (min-width: 48em) {
   .container {
     align-items: start;
-    padding: 6em 3em 3em 3em;
+    padding: 3em 4em 3em 4em;
+  }
+
+  .day {
+    background: url(assets/desktop/bg-image-daytime.jpg) no-repeat center center
+      fixed;
+  }
+
+  .night {
+    background: url(assets/desktop/bg-image-nighttime.jpg) no-repeat center
+      center fixed;
   }
 
   .lg-view {
@@ -205,11 +220,35 @@ button {
     line-height: 1em;
   }
 
+  .timezone-txt {
+    font-size: 2rem;
+    margin-bottom: 0.75em;
+  }
+
   .location-txt {
     font-size: var(--fs-md);
   }
 
   .detail-txt {
     font-size: 1rem;
+  }
+}
+
+@media only screen and (min-width: 62em) {
+  .container {
+    align-items: normal;
+    padding: 4em 9em;
+  }
+
+  .greeting-txt {
+    font-size: 1.25rem;
+  }
+
+  .time-txt {
+    font-size: var(--fs-xl);
+  }
+
+  .location-txt {
+    font-size: 1.5rem;
   }
 }

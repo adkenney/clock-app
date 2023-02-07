@@ -9,7 +9,9 @@
 .details-container {
   display: none;
   position: absolute;
-  background-color: var(--clr-secondary-100);
+  background-color: hsla(0, 0%, 100%, 0.75);
+  backdrop-filter: blur(5px);
+  color: var(--clr-primary-100);
   width: 100%;
   bottom: 0;
   left: 0;
@@ -17,9 +19,18 @@
   margin: 0 auto;
 }
 
+.dark {
+  background-color: hsla(0, 0%, 0%, 0.75);
+  backdrop-filter: blur(5px);
+}
+.dark .details h2,
+.dark .details p {
+  color: var(--clr-primary-100);
+}
+
 .details {
   flex-direction: column;
-  padding: 3em 1.5em;
+  padding: 2.5em 1.5em;
   gap: 1em;
 }
 
@@ -50,8 +61,8 @@ ul.details li {
     grid-template-areas:
       'timezone week'
       'dayOfYear weekNum';
-    gap: 4em;
-    padding: 5em 3em;
+    gap: 2em;
+    padding: 2em 3em;
   }
   .details-timezone,
   .details-year,
@@ -86,5 +97,12 @@ ul.details li {
 
   .details-weekday {
     grid-area: week;
+  }
+}
+
+@media only screen and (min-width: 62em) {
+  .details {
+    gap: 2em;
+    padding: 4em 9em;
   }
 }
